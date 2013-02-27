@@ -61,7 +61,7 @@
   };
 
   // nice pattern for calling methods
-  $.fn.canvasInfinteScroll = function(method) {
+  $.fn.canvasInfiniteScroll = function(method) {
     var el = this;
     // Method calling logic
     if (methods[method]) {
