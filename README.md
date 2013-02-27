@@ -8,7 +8,7 @@ This plugin wraps up the different methods for infinite scrolling into a simple 
 
 Include the ``canvas-infinite-scroll.js`` below your jQuery script tag.
 
-Call the plugin on any selector to setup the scrolling for the page, supplying an object containing at least the ``onBottom`` key for what you want to happen when you hit the buttom. 
+Call the plugin on any selector to setup the scrolling for the page, supplying an object containing at least the ``onBottom`` key for what you want to happen when you hit the bottom. 
     
     $('body').canvasInfiniteScroll({
        onBottom: function(){
