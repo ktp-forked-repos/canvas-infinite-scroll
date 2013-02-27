@@ -19,7 +19,7 @@
               var fbTollernce = settings.tollerence > 700 ? settings.tollerence : 700
               
               if ((scrollTop + offsetTop >= frameHeight - fbTollernce)) {
-                callback.apply(this)
+                settings.onBottom.apply(this)
               }     
               notScrolling = true;                 
           });
@@ -32,7 +32,7 @@
       var scrollPosition = $(window).scrollTop()
 
       if ((pageHeight - scrollPosition) <= settings.tollerence){
-        callback.apply(this)
+        settings.onBottom.apply(this)
       }
 
   }; 
@@ -51,10 +51,9 @@
       // if the canvas doesnt exist the below callback is never called by facebook
       FB.Canvas.getPageInfo(function(){
         clearInterval(intervalId)
-        intervalId = setInterval(function(){ checkCanvasScroll(settings.onBottom); }, settings.pollingTime);
+        intervalId = setInterval(checkCanvasScroll, settings.pollingTime);
       })
-        
-        intervalId = setInterval(function(){ checkWindowScroll(settings.onBottom) }, settings.pollingTime);
+        intervalId = setInterval(checkWindowScroll, settings.pollingTime);
       
       return this;
     }
