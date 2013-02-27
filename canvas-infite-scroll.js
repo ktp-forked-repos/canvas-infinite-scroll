@@ -42,6 +42,12 @@
     init: function(options) {
       settings = $.extend({}, defaults, options);
       
+      // if initalised return
+      if($('body').data('infinite-scroll') != undefined) {
+        return this
+      }
+      
+      $('body').data('infinite-scroll','true')
       if(FB.Canvas.getPageInfo == undefined){
         intervalId = setInterval(function(){ checkWindowScroll(settings.onBottom) }, settings.pollingTime);
       } else {
