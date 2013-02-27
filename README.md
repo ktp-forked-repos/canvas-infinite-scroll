@@ -10,7 +10,7 @@ Include the ``canvas-infinite-scroll.js`` below your jQuery script tag.
 
 Call the plugin on any selector to setup the scrolling for the page, supplying an object containing at least the ``onBottom`` key for what you want to happen when you hit the buttom. 
     
-    $('body').checkInfiniteScroll({
+    $('body').canvasInfiniteScroll({
        onBottom: function(){
            alert('Im at the the bottom')
        } 
@@ -20,5 +20,8 @@ Other options that can be passed in to override the sensible defaults
 
     {
         pollingTime: 800,  // how regularly in ms you want to check if were at the bottom
+        
         tollerence: 700,   // will trigger when we are ~ 700px from the bottom of the page 
+                           // There is a minimum tollerance setup on facebook scroll detection of 700 as 
+                           // anything lower than this may not trigger that we have reached the bottom
     }
